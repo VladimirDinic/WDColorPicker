@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wkN-g2-rnO">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Picker in interface builder-->
+        <scene sceneID="C7N-8s-22C">
+            <objects>
+                <viewController id="ygM-HD-uqE" customClass="InterfaceColorPickerViewController" customModule="ColorPicker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="175-Bf-m9t"/>
+                        <viewControllerLayoutGuide type="bottom" id="gdl-MN-38S"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tcj-8E-yjb">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MgH-ro-6ev" customClass="WDColorPickerView" customModule="ColorPicker" customModuleProvider="target">
+                                <rect key="frame" x="205" y="59" width="257" height="257"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MgH-ro-6ev" firstAttribute="width" secondItem="tcj-8E-yjb" secondAttribute="width" constant="-20" id="5qt-tP-NaP"/>
+                            <constraint firstItem="MgH-ro-6ev" firstAttribute="centerY" secondItem="tcj-8E-yjb" secondAttribute="centerY" id="Iuz-Pz-0g0"/>
+                            <constraint firstItem="MgH-ro-6ev" firstAttribute="centerX" secondItem="tcj-8E-yjb" secondAttribute="centerX" id="PPB-V0-wA9"/>
+                            <constraint firstItem="gdl-MN-38S" firstAttribute="top" secondItem="MgH-ro-6ev" secondAttribute="bottom" constant="10" id="tG0-rs-ddZ"/>
+                            <constraint firstItem="MgH-ro-6ev" firstAttribute="width" secondItem="MgH-ro-6ev" secondAttribute="height" id="tiu-wz-ZrN"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="tG0-rs-ddZ"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="5qt-tP-NaP"/>
+                                <include reference="tG0-rs-ddZ"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Picker in interface builder" image="Interface" id="cyr-LF-4gs">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="colorPicker" destination="MgH-ro-6ev" id="dAN-Fn-HTc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qlf-j2-Mo7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-262" y="-451"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="dCB-k5-rzM">
+            <objects>
+                <tabBarController id="wkN-g2-rnO" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="kGx-bo-Gm3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="selectedImageTintColor" red="0.061674054620000002" green="0.2043295567" blue="0.30976364210000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ygM-HD-uqE" kind="relationship" relationship="viewControllers" id="Ksv-AL-Ymf"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="AMU-hz-Wqs"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Spf-I8-L7e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1214" y="-123"/>
+        </scene>
+        <!--Picker as popup-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="PopUpColorPickerViewController" customModule="ColorPicker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G3d-7I-cex">
+                                <rect key="frame" x="269.5" y="171.5" width="128" height="32"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJM-SL-UZ3">
+                                        <rect key="frame" x="0.0" y="0.0" width="91" height="32"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sjE-fY-Ow9">
+                                        <rect key="frame" x="96" y="0.0" width="32" height="32"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zj1-V6-toT">
+                                                <rect key="frame" x="1" y="1" width="30" height="30"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="Ddy-Mo-oMN"/>
+                                                    <constraint firstAttribute="width" secondItem="zj1-V6-toT" secondAttribute="height" multiplier="1:1" id="nyU-hK-kLn"/>
+                                                </constraints>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="shwColorPicker:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oTI-gb-ec9"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="zj1-V6-toT" firstAttribute="centerX" secondItem="sjE-fY-Ow9" secondAttribute="centerX" id="24C-ec-rcq"/>
+                                            <constraint firstAttribute="width" secondItem="sjE-fY-Ow9" secondAttribute="height" id="7C8-p9-dge"/>
+                                            <constraint firstItem="zj1-V6-toT" firstAttribute="width" secondItem="sjE-fY-Ow9" secondAttribute="width" constant="-2" id="Hli-9Q-pIj"/>
+                                            <constraint firstItem="zj1-V6-toT" firstAttribute="centerY" secondItem="sjE-fY-Ow9" secondAttribute="centerY" id="nap-mx-GqZ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="cJM-SL-UZ3" firstAttribute="leading" secondItem="G3d-7I-cex" secondAttribute="leading" id="6hv-Bh-0qS"/>
+                                    <constraint firstAttribute="trailing" secondItem="sjE-fY-Ow9" secondAttribute="trailing" id="N3w-SS-Eph"/>
+                                    <constraint firstItem="cJM-SL-UZ3" firstAttribute="height" secondItem="G3d-7I-cex" secondAttribute="height" id="PSr-Xc-Idn"/>
+                                    <constraint firstItem="sjE-fY-Ow9" firstAttribute="height" secondItem="G3d-7I-cex" secondAttribute="height" id="ZWX-OP-d5X"/>
+                                    <constraint firstItem="cJM-SL-UZ3" firstAttribute="centerY" secondItem="G3d-7I-cex" secondAttribute="centerY" id="fPU-hW-3ll"/>
+                                    <constraint firstItem="sjE-fY-Ow9" firstAttribute="centerY" secondItem="G3d-7I-cex" secondAttribute="centerY" id="tK1-G6-Uli"/>
+                                    <constraint firstItem="sjE-fY-Ow9" firstAttribute="leading" secondItem="cJM-SL-UZ3" secondAttribute="trailing" constant="5" id="vUR-Vs-VXD"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.061674054620000002" green="0.2043295567" blue="0.30976364210000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="G3d-7I-cex" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5ll-7d-res"/>
+                            <constraint firstItem="G3d-7I-cex" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ohY-Kf-2r0"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Picker as popup" image="PopUp" id="QpW-o6-PNg"/>
+                    <connections>
+                        <outlet property="colorButton" destination="zj1-V6-toT" id="eBO-ac-0Oj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-263" y="247"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Interface" width="25" height="25"/>
+        <image name="PopUp" width="25" height="25"/>
+    </resources>
+    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+</document>

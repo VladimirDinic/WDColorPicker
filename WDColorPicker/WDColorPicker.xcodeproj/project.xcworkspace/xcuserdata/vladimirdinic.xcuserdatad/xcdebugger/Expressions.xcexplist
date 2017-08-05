@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "ShadowColorPickerView.getColor(relativeWidth : CGFloat, relativeHeight : CGFloat) -&gt; UIColor:ShadowColorPickerView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "basicColor!.hsba.h">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BasicColorPickerView.setPosition(forColor : UIColor) -&gt; ():BasicColorPickerView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "color.hsba.h">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ShadowColorPickerView.reload(newColor : UIColor) -&gt; ():ShadowColorPickerView.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.colorSelected(colorPicker : WDColorPickerView, color : UIColor) -&gt; ():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "color.rgb()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PopUpColorPickerViewController.colorSelected(colorPicker : WDColorPickerView, color : UIColor) -&gt; ():PopUpColorPickerViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "color.rgb()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static WDColorPickerView.instantiateFromNib() -&gt; UIView:WDColorPickerView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Bundle.main.loadNibNamed(&quot;WDColorPicker&quot;, owner: nil, options: nil)">
+            </PersistentString>
+            <PersistentString
+               value = "return UINib(nibName: &quot;WDColorPicker&quot;, bundle: nil).instantiate(withOwner: self, options: nil)">
+            </PersistentString>
+            <PersistentString
+               value = "UINib(nibName: &quot;WDColorPicker&quot;, bundle: nil)">
+            </PersistentString>
+            <PersistentString
+               value = "nib.instantiate(withOwner: self, options: nil)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WDColorPickerView.colorSelected(colorPicker : ColorPickerView, selectedColor : UIColor) -&gt; ():WDColorPickerView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "selectedColor.rgb()">
+            </PersistentString>
+            <PersistentString
+               value = "self.shadowColorPicker.currentColor.rgb()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WDColorPickerView.currentColor.didset:WDColorPickerView.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ShadowColorPickerView.setPosition(forColor : UIColor) -&gt; ():ShadowColorPickerView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "color.hsba">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
