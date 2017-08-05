@@ -8,13 +8,13 @@
 
 import UIKit
 
-@objc protocol WDColorPickerViewDelegate
+@objc public protocol WDColorPickerViewDelegate
 {
     @objc optional func colorChanged(colorPicker:WDColorPickerView, color:UIColor)
     @objc optional func colorSelected(colorPicker:WDColorPickerView, color:UIColor)
 }
 
-class WDColorPickerView: UIView, ColorPickerViewDelegate {
+open class WDColorPickerView: UIView, ColorPickerViewDelegate {
 
     private static var overlay : UIView?
     private static var topView : UIView? {
@@ -34,8 +34,8 @@ class WDColorPickerView: UIView, ColorPickerViewDelegate {
     @IBOutlet weak private var shadowColorSliderHorizontalPosition: NSLayoutConstraint!
     @IBOutlet weak private var shadowColorSliderVerticalPosition: NSLayoutConstraint!
     @IBOutlet weak private var basicColorSliderVerticalPosition: NSLayoutConstraint!
-    var delegate:WDColorPickerViewDelegate?
-    var currentColor : UIColor = UIColor.white {
+    open var delegate:WDColorPickerViewDelegate?
+    open var currentColor : UIColor = UIColor.white {
         didSet
         {
             self.currentColorView.backgroundColor = currentColor
