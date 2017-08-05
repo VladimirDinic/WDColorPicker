@@ -14,7 +14,7 @@ import UIKit
     @objc optional func colorSelected(colorPicker:WDColorPickerView, color:UIColor)
 }
 
-open class WDColorPickerView: UIView, ColorPickerViewDelegate {
+public class WDColorPickerView: UIView, ColorPickerViewDelegate {
 
     private static var overlay : UIView?
     private static var topView : UIView? {
@@ -123,7 +123,7 @@ open class WDColorPickerView: UIView, ColorPickerViewDelegate {
     
      // Only override draw() if you perform custom drawing.
      // An empty implementation adversely affects performance during animation.
-     override open func draw(_ rect: CGRect) {
+     override public func draw(_ rect: CGRect) {
      // Drawing code
         if basicColorPicker != nil && shadowColorPicker != nil
         {
