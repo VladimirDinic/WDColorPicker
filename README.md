@@ -6,6 +6,10 @@ WDColorPicker is a simple lightweight component for displaying color picker insi
 [![Platform](https://img.shields.io/cocoapods/p/WDColorPicker.svg?style=flat)](http://cocoapods.org/pods/WDColorPicker)
 
 # Installation:
+
+## Manual
+Download example project and add WDColorPickerView folder inside your project
+
 ## CocoaPods:
 ```Ruby
 target '<TargetName>' do
@@ -24,7 +28,7 @@ end
 ```Swift
 //Example of usage
 import UIKit
-import WDColorPicker
+import WDColorPicker    //If you are using CocoaPods
 
 class InterfaceColorPickerViewController: UIViewController, WDColorPickerViewDelegate
 {
@@ -49,7 +53,7 @@ class InterfaceColorPickerViewController: UIViewController, WDColorPickerViewDel
 ```Swift
 //Example of usage
 import UIKit
-import WDColorPicker
+import WDColorPicker    //If you are using CocoaPods
 
 class PopUpColorPickerViewController: UIViewController, WDColorPickerViewDelegate
 {
