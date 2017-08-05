@@ -5,6 +5,10 @@ WDColorPicker is a simple lightweight component for displaying color picker insi
 [![License](https://img.shields.io/cocoapods/l/WDColorPicker.svg?style=flat)](http://cocoapods.org/pods/WDColorPicker)
 [![Platform](https://img.shields.io/cocoapods/p/WDColorPicker.svg?style=flat)](http://cocoapods.org/pods/WDColorPicker)
 
+![GitHub Logo](/Images/PickerInInterface.png)
+
+![GitHub Logo](/Images/PickerAsPopup.png)
+
 # Installation:
 ## CocoaPods:
 ```Ruby
