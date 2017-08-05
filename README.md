@@ -5,10 +5,6 @@ WDColorPicker is a simple lightweight component for displaying color picker insi
 [![License](https://img.shields.io/cocoapods/l/WDColorPicker.svg?style=flat)](http://cocoapods.org/pods/WDColorPicker)
 [![Platform](https://img.shields.io/cocoapods/p/WDColorPicker.svg?style=flat)](http://cocoapods.org/pods/WDColorPicker)
 
-![GitHub Logo](/Images/PickerInInterface.png)
-
-![GitHub Logo](/Images/PickerAsPopup.png)
-
 # Installation:
 ## CocoaPods:
 ```Ruby
@@ -21,6 +17,7 @@ end
 # Usage
 
 ## Add color picker as interface component
+![GitHub Logo](/Images/PickerInInterface.png)
 1. Add UIView in storyboard / xib file and subclass it with WDColorPickerView class from WDColorPicker module
 2. Implement WDColorPickerViewDelegate method func colorChanged(colorPicker: WDColorPickerView, color: UIColor) to handle color changes:
 
@@ -50,6 +47,7 @@ class InterfaceColorPickerViewController: UIViewController, WDColorPickerViewDel
 ```
 
 ## Show color picker as pop up
+![GitHub Logo](/Images/PickerAsPopup.png)
 1. Implement WDColorPickerViewDelegate method func colorSelected(colorPicker: WDColorPickerView, color: UIColor) to handle color selection:
 
 ```Swift
