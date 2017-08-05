@@ -63,7 +63,7 @@ open class WDColorPickerView: UIView, ColorPickerViewDelegate {
         WDColorPickerView.topView?.addConstraints([horizontalConstraint, verticalConstraint, widthConstraint, heightConstraint])
     }
     
-    class func showPicker(delegate:Any? = nil, initialColor:UIColor? = nil)
+    public class func showPicker(delegate:Any? = nil, initialColor:UIColor? = nil)
     {
         self.showOverlay()
         
