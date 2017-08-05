@@ -8,13 +8,13 @@
 
 import UIKit
 
-@objc public protocol WDColorPickerViewDelegate
+@objc protocol WDColorPickerViewDelegate
 {
     @objc optional func colorChanged(colorPicker:WDColorPickerView, color:UIColor)
     @objc optional func colorSelected(colorPicker:WDColorPickerView, color:UIColor)
 }
 
-public class WDColorPickerView: UIView, ColorPickerViewDelegate {
+class WDColorPickerView: UIView, ColorPickerViewDelegate {
 
     private static var overlay : UIView?
     private static var topView : UIView? {
@@ -34,8 +34,8 @@ public class WDColorPickerView: UIView, ColorPickerViewDelegate {
     @IBOutlet weak private var shadowColorSliderHorizontalPosition: NSLayoutConstraint!
     @IBOutlet weak private var shadowColorSliderVerticalPosition: NSLayoutConstraint!
     @IBOutlet weak private var basicColorSliderVerticalPosition: NSLayoutConstraint!
-    open var delegate:WDColorPickerViewDelegate?
-    open var currentColor : UIColor = UIColor.white {
+    var delegate:WDColorPickerViewDelegate?
+    var currentColor : UIColor = UIColor.white {
         didSet
         {
             self.currentColorView.backgroundColor = currentColor
@@ -123,7 +123,7 @@ public class WDColorPickerView: UIView, ColorPickerViewDelegate {
     
      // Only override draw() if you perform custom drawing.
      // An empty implementation adversely affects performance during animation.
-     override public func draw(_ rect: CGRect) {
+     override func draw(_ rect: CGRect) {
      // Drawing code
         if basicColorPicker != nil && shadowColorPicker != nil
         {
