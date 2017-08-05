@@ -22,6 +22,7 @@ end
 2. Implement WDColorPickerViewDelegate method func colorChanged(colorPicker: WDColorPickerView, color: UIColor) to handle color changes:
 
 ```Swift
+//Example of usage
 import UIKit
 import WDColorPicker
 
@@ -33,11 +34,6 @@ class InterfaceColorPickerViewController: UIViewController, WDColorPickerViewDel
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.colorPicker.delegate = self
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func colorChanged(colorPicker: WDColorPickerView, color: UIColor) {
@@ -51,6 +47,7 @@ class InterfaceColorPickerViewController: UIViewController, WDColorPickerViewDel
 1. Implement WDColorPickerViewDelegate method func colorSelected(colorPicker: WDColorPickerView, color: UIColor) to handle color selection:
 
 ```Swift
+//Example of usage
 import UIKit
 import WDColorPicker
 
@@ -61,11 +58,6 @@ class PopUpColorPickerViewController: UIViewController, WDColorPickerViewDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func shwColorPicker(_ sender: Any) {
