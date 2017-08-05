@@ -14,7 +14,7 @@ WDColorPicker is a simple lightweight component for displaying color picker insi
 ```Ruby
 target '<TargetName>' do
     use_frameworks!
-    pod 'WDColorPicker', ' ~> 0.0.2'
+    pod 'WDColorPicker', ' ~> 0.0.3'
 end
 ```
 
