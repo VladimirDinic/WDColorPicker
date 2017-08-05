@@ -120,11 +120,11 @@ open class WDColorPickerView: UIView, ColorPickerViewDelegate {
         }
     }
     
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    open override func draw(_ rect: CGRect) {
-        super.draw(rect)
-        // Drawing code
+    
+     // Only override draw() if you perform custom drawing.
+     // An empty implementation adversely affects performance during animation.
+     override open func draw(_ rect: CGRect) {
+     // Drawing code
         if basicColorPicker != nil && shadowColorPicker != nil
         {
             basicColorPicker.colorDelegate = self
@@ -138,7 +138,7 @@ open class WDColorPickerView: UIView, ColorPickerViewDelegate {
             self.addSubview(viewFromNib)
             viewFromNib.delegate = self.delegate
         }
-    }
+     }
  
     func colorSelected(colorPicker: ColorPickerView, relativePosition: CGPoint)
     {
