@@ -35,12 +35,15 @@ open class WDColorPickerView: UIView, ColorPickerViewDelegate {
     @IBOutlet weak private var shadowColorSliderVerticalPosition: NSLayoutConstraint!
     @IBOutlet weak private var basicColorSliderVerticalPosition: NSLayoutConstraint!
     public var delegate:WDColorPickerViewDelegate?
-    public var currentColor : UIColor = UIColor.white {
-        didSet
+    public var currentColor : UIColor {
+        get {
+            return UIColor(hue: shadowColorPicker.currentColor.hsba.h, saturation: shadowColorPicker.currentColor.hsba.s, brightness: CGFloat(basicColorPicker.basicColor.hsba.b), alpha: 1.0)
+        }
+        set
         {
-            self.currentColorView.backgroundColor = currentColor
-            self.basicColorPicker.setPosition(forColor: currentColor)
-            self.shadowColorPicker.setPosition(forColor: currentColor)
+            self.basicColorPicker.basicColor = newValue
+            self.shadowColorPicker.currentColor = newValue
+            self.currentColorView.backgroundColor = newValue
         }
     }
     @IBOutlet weak private var currentColorView: UIView!
@@ -69,18 +72,17 @@ open class WDColorPickerView: UIView, ColorPickerViewDelegate {
         
         let colorPicker = self.getColorPicker(withSelectButton: true)
         colorPicker.currentColor = initialColor!
-        colorPicker.frame = CGRect(x: ((WDColorPickerView.topView?.frame.width)! - 200.0) * 0.5, y: ((WDColorPickerView.topView?.frame.height)! - 200.0) * 0.5, width: 200.0, height: 200.0)
+        let minDim = min(UIScreen.main.bounds.width,UIScreen.main.bounds.height)
+        colorPicker.frame = CGRect(x: minDim * 0.15, y: minDim * 0.15, width: minDim * 0.7, height: minDim * 0.7)
         colorPicker.delegate = delegate as? WDColorPickerViewDelegate
-        colorPicker.colorSelected(colorPicker: colorPicker.basicColorPicker, relativePosition: colorPicker.basicColorPicker.colorPosition!)
-        colorPicker.colorSelected(colorPicker: colorPicker.shadowColorPicker, relativePosition: colorPicker.shadowColorPicker.colorPosition!)
         colorPicker.alpha = 0.0
         
         WDColorPickerView.topView?.addSubview(colorPicker)
         colorPicker.translatesAutoresizingMaskIntoConstraints = false
         let horizontalConstraint2 = NSLayoutConstraint(item: colorPicker, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: WDColorPickerView.topView, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0)
         let verticalConstraint2 = NSLayoutConstraint(item: colorPicker, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: WDColorPickerView.topView, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: 0)
-        let widthConstraint2 = NSLayoutConstraint(item: colorPicker, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 200.0)
-        let heightConstraint2 = NSLayoutConstraint(item: colorPicker, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 200.0)
+        let widthConstraint2 = NSLayoutConstraint(item: colorPicker, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: minDim * 0.7)
+        let heightConstraint2 = NSLayoutConstraint(item: colorPicker, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: minDim * 0.7)
         
         WDColorPickerView.topView?.addConstraints([horizontalConstraint2, verticalConstraint2, widthConstraint2, heightConstraint2])
         
@@ -93,6 +95,12 @@ open class WDColorPickerView: UIView, ColorPickerViewDelegate {
             colorPicker.alpha = 1.0
             overlay?.alpha = 1.0
         }, completion: nil)
+        UIView.animate(withDuration: 0.3, animations: { 
+            colorPicker.alpha = 1.0
+            overlay?.alpha = 1.0
+        }) { (finished) in
+            colorPicker.perform(#selector(setInitialCursorPositions), with: nil, afterDelay: 0.001)
+        }
     }
     
     @IBAction func selectColorPressed(_ sender: Any)
@@ -100,7 +108,7 @@ open class WDColorPickerView: UIView, ColorPickerViewDelegate {
         self.hidePicker()
         if let colorDelegate = delegate
         {
-            colorDelegate.colorSelected?(colorPicker: self, color: shadowColorPicker.currentColor)
+            colorDelegate.colorSelected?(colorPicker: self, color: currentColor)
         }
     }
     
@@ -129,6 +137,10 @@ open class WDColorPickerView: UIView, ColorPickerViewDelegate {
         {
             basicColorPicker.colorDelegate = self
             shadowColorPicker.colorDelegate = self
+            if currentColorView != nil
+            {
+                self.currentColorView.backgroundColor = UIColor(hue: shadowColorPicker.currentColor.hsba.h, saturation: shadowColorPicker.currentColor.hsba.s, brightness: CGFloat(basicColorPicker.basicColor.hsba.b), alpha: 1.0)
+            }
         }
         else
         {
@@ -139,39 +151,40 @@ open class WDColorPickerView: UIView, ColorPickerViewDelegate {
             viewFromNib.delegate = self.delegate
         }
      }
- 
-    func colorSelected(colorPicker: ColorPickerView, relativePosition: CGPoint)
-    {
-        if colorPicker == basicColorPicker
-        {
-            self.basicColorSliderVerticalPosition.constant = min(max(0, relativePosition.y), basicColorPicker.frame.height-2.0)
-            self.layoutIfNeeded()
-        }
-        else if colorPicker == shadowColorPicker
-        {
-            self.shadowColorSliderHorizontalPosition.constant = min(max(-2.0, relativePosition.x), shadowColorPicker.frame.width-4.0)
-            self.shadowColorSliderVerticalPosition.constant = min(max(-2.0, relativePosition.y), shadowColorPicker.frame.height-4.0)
-            self.layoutIfNeeded()
-        }
-    }
     
-    func colorSelected(colorPicker: ColorPickerView, selectedColor: UIColor)
-    {
+    func colorSelected(colorPicker: ColorPickerView, selectedColor: UIColor) {
+        currentColor = selectedColor
         if colorPicker == basicColorPicker
         {
-            currentColor = selectedColor
-            self.shadowColorPicker.reload(newColor: currentColor)
-        }
-        else if colorPicker == shadowColorPicker
-        {
-            currentColor = selectedColor
+            self.shadowColorPicker.reload(newColor: selectedColor)
             self.currentColorView.backgroundColor = selectedColor
         }
-        self.currentColorView.backgroundColor = self.shadowColorPicker.currentColor
+        else if colorPicker == shadowColorPicker
+        {
+            self.basicColorPicker.reload(newColor: selectedColor)
+            self.currentColorView.backgroundColor = selectedColor
+        }
         if let colorDelegate = delegate
         {
-            colorDelegate.colorChanged?(colorPicker: self, color: self.shadowColorPicker.currentColor)
+            colorDelegate.colorChanged?(colorPicker: self, color: currentColor)
         }
+        self.setCursorPositions()
+    }
+    
+    func setCursorPositions()
+    {
+        self.basicColorSliderVerticalPosition.constant = min(max(0, basicColorPicker.pickPosition.y - 1.0), basicColorPicker.frame.height-2.0)
+        self.shadowColorSliderHorizontalPosition.constant = min(max(-2.0, shadowColorPicker.pickPosition.x - 2.0), shadowColorPicker.frame.width-4.0)
+        self.shadowColorSliderVerticalPosition.constant = min(max(-2.0, shadowColorPicker.pickPosition.y - 2.0), shadowColorPicker.frame.height-4.0)
+        self.layoutIfNeeded()
+    }
+    
+    func setInitialCursorPositions()
+    {
+        self.basicColorSliderVerticalPosition.constant = min(max(0, (1.0 - currentColor.hsba.b) * basicColorPicker.frame.height - 1.0), basicColorPicker.frame.height-2.0)
+        self.shadowColorSliderHorizontalPosition.constant = min(max(-2.0, currentColor.hsba.h * shadowColorPicker.frame.width - 2.0), shadowColorPicker.frame.width-4.0)
+        self.shadowColorSliderVerticalPosition.constant = min(max(-2.0, (1.0 - currentColor.hsba.s) * shadowColorPicker.frame.height - 2.0), shadowColorPicker.frame.height-4.0)
+        self.layoutIfNeeded()
     }
     
     class func getColorPicker(withSelectButton:Bool) -> WDColorPickerView

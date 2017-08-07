@@ -11,12 +11,12 @@ import UIKit
 protocol ColorPickerViewDelegate
 {
     func colorSelected(colorPicker:ColorPickerView, selectedColor:UIColor)
-    func colorSelected(colorPicker:ColorPickerView, relativePosition:CGPoint)
 }
 
 class ColorPickerView: UIView {
 
     var colorDelegate : ColorPickerViewDelegate?
+    var pickPosition:CGPoint = .zero
     
     var colorPickTapGesture:UITapGestureRecognizer?
     var colorPickPanGesture:UIPanGestureRecognizer?
@@ -69,6 +69,6 @@ extension UIColor {
     var hsba:(h: CGFloat, s: CGFloat,b: CGFloat,a: CGFloat) {
         var h: CGFloat = 0, s: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
         self.getHue(&h, saturation: &s, brightness: &b, alpha: &a)
-        return (h: h, s: s, b: b, a: a)
+        return (h: min(max(h,0),1), s: min(max(s,0),1), b: min(max(b,0),1), a: a)
     }
 }
