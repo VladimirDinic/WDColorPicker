@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DYN-cZ-2xi">
-                    <rect key="frame" x="183" y="0.0" width="30" height="30"/>
+                    <rect key="frame" x="193" y="0.0" width="30" height="30"/>
                     <state key="normal" title="X">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -187,7 +187,7 @@
                 <constraint firstItem="vcb-lh-85G" firstAttribute="bottom" secondItem="8EI-d4-Dde" secondAttribute="top" id="jBx-H3-fO9"/>
                 <constraint firstAttribute="bottom" secondItem="m7G-Qy-atM" secondAttribute="bottom" constant="10" id="k3W-lh-bHl"/>
                 <constraint firstItem="pIR-Xm-OOy" firstAttribute="leading" secondItem="rgk-ro-Nvl" secondAttribute="leading" id="lhg-JE-fRt"/>
-                <constraint firstAttribute="trailing" secondItem="DYN-cZ-2xi" secondAttribute="trailing" constant="10" id="oDE-Qx-58s"/>
+                <constraint firstAttribute="trailing" secondItem="DYN-cZ-2xi" secondAttribute="trailing" id="oDE-Qx-58s"/>
                 <constraint firstItem="Rkl-le-wJi" firstAttribute="centerX" secondItem="8EI-d4-Dde" secondAttribute="centerX" id="txo-hE-AOH"/>
                 <constraint firstItem="m7G-Qy-atM" firstAttribute="top" secondItem="rgk-ro-Nvl" secondAttribute="bottom" constant="10" id="zE0-Cv-SEn"/>
             </constraints>

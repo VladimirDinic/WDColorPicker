@@ -9,8 +9,6 @@
 import UIKit
 
 class ShadowColorPickerView: ColorPickerView {
-
-    var currentColor:UIColor = .red
     
     override func drawColors()
     {
@@ -21,7 +19,7 @@ class ShadowColorPickerView: ColorPickerView {
         {
             for relativeHeight in 0...Int(self.frame.height)
             {
-                let color = getColor(relativeWidth: CGFloat(relativeWidth), relativeHeight: CGFloat(relativeHeight))
+                let color = getColor(relativeWidth: CGFloat(relativeWidth), relativeHeight: CGFloat(relativeHeight), final: false)
                 context?.setFillColor(color.cgColor)
                 let subrect = CGRect(x: self.frame.width * CGFloat(relativeWidth) / (self.frame.width+1.0), y: self.frame.height * CGFloat(relativeHeight) / (self.frame.height+1.0), width: 2.0, height: 2.0)
                 context?.fill(subrect)
@@ -30,26 +28,44 @@ class ShadowColorPickerView: ColorPickerView {
         context?.restoreGState()
     }
     
-    func reload(newColor:UIColor)
+    func initialize(color:UIColor)
     {
-        currentColor = newColor
+        if !initialized
+        {
+            hue = color.hsba.h
+            saturation = color.hsba.s
+        }
+        initialized = true
+    }
+    
+    func reload(brightness:CGFloat)
+    {
+        self.brightness = brightness
     }
     
     override func pickColor(gesture: UIGestureRecognizer)
     {
         pickPosition = gesture.location(in: self)
-        let pickedColor = self.getColor(relativeWidth: min(self.frame.width,max(0.0,(pickPosition?.x)!)), relativeHeight: min(self.frame.height,max(0.0,(pickPosition?.y)!)))
-        currentColor = UIColor(hue: pickedColor.hsba.h, saturation: pickedColor.hsba.s, brightness: currentColor.hsba.b, alpha: 1.0)
+        hue = min(self.frame.width,max(0.0,(pickPosition?.x)!))/self.frame.width
+        saturation = 1.0 - min(self.frame.height,max(0.0,(pickPosition?.y)!))/self.frame.height
+        _ = self.getColor(relativeWidth: min(self.frame.width,max(0.0,(pickPosition?.x)!)), relativeHeight: min(self.frame.height,max(0.0,(pickPosition?.y)!)), final: true)
         if let delegate = self.colorDelegate
         {
-            delegate.colorSelected(colorPicker: self, selectedColor: currentColor)
+            delegate.colorSelected(colorPicker: self, hue: hue, saturation: saturation, brightness: brightness)
         }
     }
  
-    func getColor(relativeWidth:CGFloat, relativeHeight:CGFloat) -> UIColor
+    func getColor(relativeWidth:CGFloat, relativeHeight:CGFloat, final:Bool) -> UIColor
     {
-        let hue =  relativeWidth/self.frame.width
-        let saturation = 1.0 - relativeHeight/self.frame.height
-        return UIColor(hue: hue, saturation: saturation, brightness: 1.0, alpha: 1.0)
+        if final
+        {
+            return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1.0)
+        }
+        else
+        {
+            let tempHue = relativeWidth / self.frame.width
+            let tempSaturation = (self.frame.height - relativeHeight) / self.frame.height
+            return UIColor(hue: tempHue, saturation: tempSaturation, brightness: 1.0, alpha: 1.0)
+        }
     }
 }

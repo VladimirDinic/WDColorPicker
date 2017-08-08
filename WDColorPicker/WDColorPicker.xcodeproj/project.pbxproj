@@ -113,8 +113,8 @@
 		F593A48A1F364EB600EFC090 /* WDColorPickerView */ = {
 			isa = PBXGroup;
 			children = (
-				F593A48B1F364EB600EFC090 /* BasicColorPickerView.swift */,
 				F593A48C1F364EB600EFC090 /* ColorPickerView.swift */,
+				F593A48B1F364EB600EFC090 /* BasicColorPickerView.swift */,
 				F593A48D1F364EB600EFC090 /* ShadowColorPickerView.swift */,
 				F593A48E1F364EB600EFC090 /* WDColorPickerView.swift */,
 				F593A48F1F364EB600EFC090 /* WDColorPickerView.xib */,

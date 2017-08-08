@@ -10,8 +10,6 @@ import UIKit
 
 class BasicColorPickerView: ColorPickerView {
     
-    var basicColor : UIColor = .red
-    
     override func drawColors()
     {
         let context: CGContext? = UIGraphicsGetCurrentContext()
@@ -19,7 +17,7 @@ class BasicColorPickerView: ColorPickerView {
         context?.saveGState()
         for relativeHeight in 0...Int(self.frame.height)
         {
-            let color = getColor(relativeHeight: CGFloat(relativeHeight))
+            let color = getColor(relativeHeight: CGFloat(relativeHeight), final: false)
             context?.setFillColor(color.cgColor)
             let subrect = CGRect(x: 0.0, y: self.frame.height * CGFloat(relativeHeight) / (self.frame.height+1.0), width: self.frame.width, height: 2.0)
             context?.fill(subrect)
@@ -30,22 +28,43 @@ class BasicColorPickerView: ColorPickerView {
     override func pickColor(gesture: UIGestureRecognizer)
     {
         pickPosition = gesture.location(in: self)
-        let pickedColor = self.getColor(relativeHeight: (pickPosition?.y)!)
+        brightness = 1.0 - (pickPosition?.y)! / self.frame.height
+        _ = self.getColor(relativeHeight: (pickPosition?.y)!, final: true)
         if let delegate = self.colorDelegate
         {
-            delegate.colorSelected(colorPicker: self, selectedColor: pickedColor)
+            delegate.colorSelected(colorPicker: self, hue: hue, saturation: saturation, brightness: brightness)
         }
     }
     
-    func reload(newColor:UIColor)
+    func initialize(color:UIColor)
     {
-        basicColor = newColor
+        if !initialized
+        {
+            hue = color.hsba.h
+            saturation = color.hsba.s
+            brightness = color.hsba.b
+            self.setNeedsDisplay()
+        }
+        initialized = true
+    }
+    
+    func reload(hue:CGFloat, saturation:CGFloat)
+    {
+        self.hue = hue
+        self.saturation = saturation
         self.setNeedsDisplay()
     }
  
-    func getColor(relativeHeight:CGFloat) -> UIColor
+    func getColor(relativeHeight:CGFloat, final:Bool) -> UIColor
     {
-        let brightness = 1.0 - relativeHeight / self.frame.height
-        return UIColor(hue: basicColor.hsba.h, saturation: basicColor.hsba.s, brightness: brightness, alpha: 1.0)
+        if final
+        {
+            return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1.0)
+        }
+        else
+        {
+            let tempBrightness = 1.0 - relativeHeight / self.frame.height
+            return UIColor(hue: hue, saturation: saturation, brightness: tempBrightness, alpha: 1.0)
+        }
     }
 }

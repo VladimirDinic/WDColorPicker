@@ -16,6 +16,8 @@ import UIKit
 
 open class WDColorPickerView: UIView, ColorPickerViewDelegate {
 
+    var pickerInitialColor : UIColor = .black
+    
     private static var overlay : UIView?
     private static var topView : UIView? {
         get {
@@ -37,12 +39,12 @@ open class WDColorPickerView: UIView, ColorPickerViewDelegate {
     public var delegate:WDColorPickerViewDelegate?
     public var currentColor : UIColor {
         get {
-            return UIColor(hue: shadowColorPicker.currentColor.hsba.h, saturation: shadowColorPicker.currentColor.hsba.s, brightness: CGFloat(basicColorPicker.basicColor.hsba.b), alpha: 1.0)
+            return UIColor(hue: shadowColorPicker.hue, saturation: shadowColorPicker.saturation, brightness: CGFloat(basicColorPicker.brightness), alpha: 1.0)
         }
         set
         {
-            self.basicColorPicker.basicColor = newValue
-            self.shadowColorPicker.currentColor = newValue
+            self.basicColorPicker.initialize(color: newValue)
+            self.shadowColorPicker.initialize(color: newValue)
             self.currentColorView.backgroundColor = newValue
         }
     }
@@ -133,10 +135,13 @@ open class WDColorPickerView: UIView, ColorPickerViewDelegate {
         {
             basicColorPicker.colorDelegate = self
             shadowColorPicker.colorDelegate = self
+            basicColorPicker.initialize(color: pickerInitialColor)
+            shadowColorPicker.initialize(color: pickerInitialColor)
             if currentColorView != nil
             {
-                self.currentColorView.backgroundColor = UIColor(hue: shadowColorPicker.currentColor.hsba.h, saturation: shadowColorPicker.currentColor.hsba.s, brightness: CGFloat(basicColorPicker.basicColor.hsba.b), alpha: 1.0)
+                self.currentColorView.backgroundColor = UIColor(hue: shadowColorPicker.hue, saturation: shadowColorPicker.saturation, brightness: CGFloat(basicColorPicker.brightness), alpha: 1.0)
             }
+            self.perform(#selector(setInitialCursorPositions), with: nil, afterDelay: 0.001)
         }
         else
         {
@@ -148,17 +153,17 @@ open class WDColorPickerView: UIView, ColorPickerViewDelegate {
         }
      }
     
-    func colorSelected(colorPicker: ColorPickerView, selectedColor: UIColor) {
-        currentColor = selectedColor
+    func colorSelected(colorPicker: ColorPickerView, hue: CGFloat, saturation: CGFloat, brightness: CGFloat) {
+        currentColor = UIColor(hue: shadowColorPicker.hue, saturation: shadowColorPicker.saturation, brightness: basicColorPicker.brightness, alpha: 1.0)
         if colorPicker == basicColorPicker
         {
-            self.shadowColorPicker.reload(newColor: selectedColor)
-            self.currentColorView.backgroundColor = selectedColor
+            self.shadowColorPicker.reload(brightness: brightness)
+            self.currentColorView.backgroundColor = currentColor
         }
         else if colorPicker == shadowColorPicker
         {
-            self.basicColorPicker.reload(newColor: selectedColor)
-            self.currentColorView.backgroundColor = selectedColor
+            self.basicColorPicker.reload(hue: hue, saturation: saturation)
+            self.currentColorView.backgroundColor = currentColor
         }
         if let colorDelegate = delegate
         {

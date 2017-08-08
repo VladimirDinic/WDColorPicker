@@ -3,22 +3,6 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "static WDColorPickerView.showPicker(delegate : Any?, initialColor : UIColor?) -&gt; ():WDColorPickerView.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "initialColor.hsba">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "ShadowColorPickerView.currentColor.didset:ShadowColorPickerView.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "pickPosition">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "WDColorPickerView.colorSelected(colorPicker : ColorPickerView, relativePosition : CGPoint) -&gt; ():WDColorPickerView.swift">
          <PersistentStrings>
             <PersistentString
@@ -30,13 +14,18 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "WDColorPickerView.currentColor.didset:WDColorPickerView.swift">
-      </ContextState>
-      <ContextState
-         contextName = "ShadowColorPickerView.setPosition(forColor : UIColor) -&gt; ():ShadowColorPickerView.swift">
+         contextName = "WDColorPickerView.colorSelected(colorPicker : ColorPickerView) -&gt; ():WDColorPickerView.swift">
          <PersistentStrings>
             <PersistentString
-               value = "color.hsba">
+               value = "currentColor.hsba">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ShadowColorPickerView.getColor(relativeWidth : CGFloat, relativeHeight : CGFloat) -&gt; UIColor:ShadowColorPickerView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "basicColor!.hsba.h">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -58,26 +47,7 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ShadowColorPickerView.pickColor(gesture : UIGestureRecognizer) -&gt; ():ShadowColorPickerView.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "currentColor.hsba">
-            </PersistentString>
-            <PersistentString
-               value = "pickedColor.hsba">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "BasicColorPickerView.getColor(relativeHeight : CGFloat) -&gt; UIColor:BasicColorPickerView.swift">
-      </ContextState>
-      <ContextState
-         contextName = "ViewController.colorSelected(colorPicker : WDColorPickerView, color : UIColor) -&gt; ():ViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "color.rgb()">
-            </PersistentString>
-         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "WDColorPickerView.setCursorPositions() -&gt; ():WDColorPickerView.swift">
@@ -88,24 +58,21 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "WDColorPickerView.colorSelected(colorPicker : ColorPickerView, selectedColor : UIColor) -&gt; ():WDColorPickerView.swift">
+         contextName = "BasicColorPickerView.pickColor(gesture : UIGestureRecognizer) -&gt; ():BasicColorPickerView.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ShadowColorPickerView.currentColor.didset:ShadowColorPickerView.swift">
          <PersistentStrings>
             <PersistentString
-               value = "selectedColor.rgb()">
-            </PersistentString>
-            <PersistentString
-               value = "self.shadowColorPicker.currentColor.rgb()">
+               value = "pickPosition">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ShadowColorPickerView.reload(newColor : UIColor) -&gt; ():ShadowColorPickerView.swift">
-      </ContextState>
-      <ContextState
-         contextName = "BasicColorPickerView.setPosition(forColor : UIColor) -&gt; ():BasicColorPickerView.swift">
+         contextName = "ViewController.colorSelected(colorPicker : WDColorPickerView, color : UIColor) -&gt; ():ViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "color.hsba.h">
+               value = "color.rgb()">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -118,12 +85,92 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ShadowColorPickerView.getColor(relativeWidth : CGFloat, relativeHeight : CGFloat) -&gt; UIColor:ShadowColorPickerView.swift">
+         contextName = "BasicColorPickerView.reload(newColor : UIColor) -&gt; ():BasicColorPickerView.swift">
          <PersistentStrings>
             <PersistentString
-               value = "basicColor!.hsba.h">
+               value = "self">
+            </PersistentString>
+            <PersistentString
+               value = "basicColor.hsba">
+            </PersistentString>
+            <PersistentString
+               value = "newColor.hsba">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ShadowColorPickerView.pickColor(gesture : UIGestureRecognizer) -&gt; ():ShadowColorPickerView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "pickedColor.hsba">
+            </PersistentString>
+            <PersistentString
+               value = "self.curentColor.hsba">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BasicColorPickerView.drawColors() -&gt; ():BasicColorPickerView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "basicColor.hsba">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WDColorPickerView.draw(CGRect) -&gt; ():WDColorPickerView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "pickerInitialColor.hsba">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static WDColorPickerView.showPicker(delegate : Any?, initialColor : UIColor?) -&gt; ():WDColorPickerView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "initialColor.hsba">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WDColorPickerView.colorSelected(colorPicker : ColorPickerView, selectedColor : UIColor) -&gt; ():WDColorPickerView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "selectedColor.hsba">
+            </PersistentString>
+            <PersistentString
+               value = "selectedColor.rgb()">
+            </PersistentString>
+            <PersistentString
+               value = "self.shadowColorPicker.currentColor.rgb()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ShadowColorPickerView.setPosition(forColor : UIColor) -&gt; ():ShadowColorPickerView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "color.hsba">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WDColorPickerView.currentColor.setter:WDColorPickerView.swift">
+      </ContextState>
+      <ContextState
+         contextName = "WDColorPickerView.currentColor.didset:WDColorPickerView.swift">
+      </ContextState>
+      <ContextState
+         contextName = "BasicColorPickerView.setPosition(forColor : UIColor) -&gt; ():BasicColorPickerView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "color.hsba.h">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ShadowColorPickerView.reload(newColor : UIColor) -&gt; ():ShadowColorPickerView.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

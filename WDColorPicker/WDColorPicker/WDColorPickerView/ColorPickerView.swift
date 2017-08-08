@@ -10,7 +10,7 @@ import UIKit
 
 protocol ColorPickerViewDelegate
 {
-    func colorSelected(colorPicker:ColorPickerView, selectedColor:UIColor)
+    func colorSelected(colorPicker:ColorPickerView, hue:CGFloat, saturation:CGFloat, brightness:CGFloat)
 }
 
 class ColorPickerView: UIView {
@@ -20,6 +20,11 @@ class ColorPickerView: UIView {
     
     var colorPickTapGesture:UITapGestureRecognizer?
     var colorPickPanGesture:UIPanGestureRecognizer?
+
+    var hue:CGFloat = 0.0
+    var saturation:CGFloat = 0.0
+    var brightness:CGFloat = 0.0
+    var initialized = false
     
     
     // Only override draw() if you perform custom drawing.
