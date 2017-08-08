@@ -13,11 +13,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="WDColorPickerView" customModule="WDColorPicker" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="223" height="199"/>
+            <rect key="frame" x="0.0" y="0.0" width="424" height="395"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DYN-cZ-2xi">
-                    <rect key="frame" x="193" y="0.0" width="30" height="30"/>
+                    <rect key="frame" x="394" y="0.0" width="30" height="30"/>
                     <state key="normal" title="X">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -25,8 +25,8 @@
                         <action selector="closeColorPicker:" destination="iN0-l3-epB" eventType="touchUpInside" id="uka-iu-1AV"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8EI-d4-Dde" customClass="BasicColorPickerView" customModule="WDColorPicker" customModuleProvider="target">
-                    <rect key="frame" x="10" y="30" width="40" height="109.5"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8EI-d4-Dde" customClass="BrightnessColorPickerView" customModule="WDColorPicker" customModuleProvider="target">
+                    <rect key="frame" x="10" y="30" width="40" height="305"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="40" id="cEu-41-PYH"/>
@@ -75,8 +75,8 @@
                         <constraint firstItem="vcb-lh-85G" firstAttribute="width" secondItem="R4L-aE-WHV" secondAttribute="width" constant="-4" id="tGk-bh-oGI"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rgk-ro-Nvl" customClass="ShadowColorPickerView" customModule="WDColorPicker" customModuleProvider="target">
-                    <rect key="frame" x="60" y="30" width="153" height="109.5"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rgk-ro-Nvl" customClass="HueSaturationColorPickerView" customModule="WDColorPicker" customModuleProvider="target">
+                    <rect key="frame" x="60" y="30" width="354" height="305"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uKY-kb-qO7" userLabel="ShadowColorSlider">
@@ -124,10 +124,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m7G-Qy-atM" userLabel="ControlView">
-                    <rect key="frame" x="10" y="149.5" width="202.5" height="40"/>
+                    <rect key="frame" x="10" y="345" width="403.5" height="40"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LVG-zL-Rxm">
-                            <rect key="frame" x="1" y="0.5" width="200.5" height="38"/>
+                            <rect key="frame" x="1" y="0.5" width="401.5" height="38"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rkl-le-wJi">
                                     <rect key="frame" x="2" y="2" width="34" height="34"/>
@@ -137,7 +137,7 @@
                                     </constraints>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vHv-gy-07P">
-                                    <rect key="frame" x="36" y="0.0" width="164.5" height="38"/>
+                                    <rect key="frame" x="36" y="0.0" width="365.5" height="38"/>
                                     <state key="normal" title="Select color">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
@@ -200,13 +200,13 @@
                 <outlet property="shadowColorSliderHorizontalPosition" destination="lhg-JE-fRt" id="RTG-N8-3rU"/>
                 <outlet property="shadowColorSliderVerticalPosition" destination="9dn-tb-Zs6" id="nwr-JJ-bPc"/>
             </connections>
-            <point key="canvasLocation" x="-23.5" y="-284.5"/>
+            <point key="canvasLocation" x="77" y="-186.5"/>
         </view>
         <view contentMode="scaleToFill" id="dfm-0J-LgU" customClass="WDColorPickerView" customModule="WDColorPicker" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="424" height="395"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zDS-9B-WaV" customClass="BasicColorPickerView" customModule="WDColorPicker" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zDS-9B-WaV" customClass="BrightnessColorPickerView" customModule="WDColorPicker" customModuleProvider="target">
                     <rect key="frame" x="10" y="10" width="40" height="325"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -256,7 +256,7 @@
                         <constraint firstItem="7Qf-2v-P2a" firstAttribute="centerY" secondItem="ql8-uy-hwW" secondAttribute="centerY" id="uSs-tR-MQV"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qes-X1-Ec5" customClass="ShadowColorPickerView" customModule="WDColorPicker" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qes-X1-Ec5" customClass="HueSaturationColorPickerView" customModule="WDColorPicker" customModuleProvider="target">
                     <rect key="frame" x="60" y="10" width="354" height="325"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>

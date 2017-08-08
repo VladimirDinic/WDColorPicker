@@ -49,8 +49,8 @@ open class WDColorPickerView: UIView, ColorPickerViewDelegate {
         }
     }
     @IBOutlet weak private var currentColorView: UIView!
-    @IBOutlet weak private var basicColorPicker: BasicColorPickerView!
-    @IBOutlet weak private var shadowColorPicker: ShadowColorPickerView!
+    @IBOutlet weak private var basicColorPicker: BrightnessColorPickerView!
+    @IBOutlet weak private var shadowColorPicker: HueSaturationColorPickerView!
     
     
     class func showOverlay()

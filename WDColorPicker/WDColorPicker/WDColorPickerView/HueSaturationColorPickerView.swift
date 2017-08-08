@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ShadowColorPickerView: ColorPickerView {
+class HueSaturationColorPickerView: ColorPickerView {
     
     override func drawColors()
     {

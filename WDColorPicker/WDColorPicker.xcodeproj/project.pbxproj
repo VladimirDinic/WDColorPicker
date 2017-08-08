@@ -13,11 +13,11 @@
 		F593A4921F364EB600EFC090 /* InterfaceColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F593A4851F364EB600EFC090 /* InterfaceColorPickerViewController.swift */; };
 		F593A4931F364EB600EFC090 /* PopUpColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F593A4861F364EB600EFC090 /* PopUpColorPickerViewController.swift */; };
 		F593A4941F364EB600EFC090 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F593A4881F364EB600EFC090 /* Assets.xcassets */; };
-		F593A4961F364EB600EFC090 /* BasicColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F593A48B1F364EB600EFC090 /* BasicColorPickerView.swift */; };
 		F593A4971F364EB600EFC090 /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F593A48C1F364EB600EFC090 /* ColorPickerView.swift */; };
-		F593A4981F364EB600EFC090 /* ShadowColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F593A48D1F364EB600EFC090 /* ShadowColorPickerView.swift */; };
 		F593A4991F364EB600EFC090 /* WDColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F593A48E1F364EB600EFC090 /* WDColorPickerView.swift */; };
 		F593A49A1F364EB600EFC090 /* WDColorPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F593A48F1F364EB600EFC090 /* WDColorPickerView.xib */; };
+		F5C06FA41F3A3B81008A08C0 /* BrightnessColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C06FA21F3A3B81008A08C0 /* BrightnessColorPickerView.swift */; };
+		F5C06FA51F3A3B81008A08C0 /* HueSaturationColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C06FA31F3A3B81008A08C0 /* HueSaturationColorPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,11 +29,11 @@
 		F593A4861F364EB600EFC090 /* PopUpColorPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpColorPickerViewController.swift; sourceTree = "<group>"; };
 		F593A4881F364EB600EFC090 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F593A4891F364EB600EFC090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F593A48B1F364EB600EFC090 /* BasicColorPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicColorPickerView.swift; sourceTree = "<group>"; };
 		F593A48C1F364EB600EFC090 /* ColorPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
-		F593A48D1F364EB600EFC090 /* ShadowColorPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowColorPickerView.swift; sourceTree = "<group>"; };
 		F593A48E1F364EB600EFC090 /* WDColorPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDColorPickerView.swift; sourceTree = "<group>"; };
 		F593A48F1F364EB600EFC090 /* WDColorPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDColorPickerView.xib; sourceTree = "<group>"; };
+		F5C06FA21F3A3B81008A08C0 /* BrightnessColorPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrightnessColorPickerView.swift; sourceTree = "<group>"; };
+		F5C06FA31F3A3B81008A08C0 /* HueSaturationColorPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HueSaturationColorPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,8 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				F593A48C1F364EB600EFC090 /* ColorPickerView.swift */,
-				F593A48B1F364EB600EFC090 /* BasicColorPickerView.swift */,
-				F593A48D1F364EB600EFC090 /* ShadowColorPickerView.swift */,
+				F5C06FA31F3A3B81008A08C0 /* HueSaturationColorPickerView.swift */,
+				F5C06FA21F3A3B81008A08C0 /* BrightnessColorPickerView.swift */,
 				F593A48E1F364EB600EFC090 /* WDColorPickerView.swift */,
 				F593A48F1F364EB600EFC090 /* WDColorPickerView.xib */,
 			);
@@ -199,10 +199,10 @@
 				F593A4991F364EB600EFC090 /* WDColorPickerView.swift in Sources */,
 				F593A4921F364EB600EFC090 /* InterfaceColorPickerViewController.swift in Sources */,
 				F593A4931F364EB600EFC090 /* PopUpColorPickerViewController.swift in Sources */,
+				F5C06FA41F3A3B81008A08C0 /* BrightnessColorPickerView.swift in Sources */,
 				F593A4741F364E5C00EFC090 /* AppDelegate.swift in Sources */,
 				F593A4971F364EB600EFC090 /* ColorPickerView.swift in Sources */,
-				F593A4981F364EB600EFC090 /* ShadowColorPickerView.swift in Sources */,
-				F593A4961F364EB600EFC090 /* BasicColorPickerView.swift in Sources */,
+				F5C06FA51F3A3B81008A08C0 /* HueSaturationColorPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

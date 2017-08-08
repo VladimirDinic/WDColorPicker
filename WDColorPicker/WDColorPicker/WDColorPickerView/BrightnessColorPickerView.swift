@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BasicColorPickerView: ColorPickerView {
+class BrightnessColorPickerView: ColorPickerView {
     
     override func drawColors()
     {
