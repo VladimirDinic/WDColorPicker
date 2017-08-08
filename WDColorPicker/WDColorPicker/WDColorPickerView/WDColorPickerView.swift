@@ -144,6 +144,7 @@ open class WDColorPickerView: UIView, ColorPickerViewDelegate {
                 self.currentColorView.backgroundColor = UIColor(hue: hueSaturationColorPicker.hue, saturation: hueSaturationColorPicker.saturation, brightness: CGFloat(brightnessColorPicker.brightness), alpha: 1.0)
             }
             self.perform(#selector(setInitialCursorPositions), with: nil, afterDelay: 0.001)
+            NotificationCenter.default.addObserver(self, selector: #selector(reload), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
         }
         else
         {
@@ -154,6 +155,13 @@ open class WDColorPickerView: UIView, ColorPickerViewDelegate {
             viewFromNib.delegate = self.delegate
         }
      }
+    
+    func reload()
+    {
+        brightnessColorPicker.pickPosition = nil
+        hueSaturationColorPicker.pickPosition = nil
+        self.perform(#selector(setInitialCursorPositions), with: nil, afterDelay: 0.001)
+    }
     
     func colorSelected(colorPicker: ColorPickerView, hue: CGFloat, saturation: CGFloat, brightness: CGFloat) {
         currentColor = UIColor(hue: hueSaturationColorPicker.hue, saturation: hueSaturationColorPicker.saturation, brightness: brightnessColorPicker.brightness, alpha: 1.0)
