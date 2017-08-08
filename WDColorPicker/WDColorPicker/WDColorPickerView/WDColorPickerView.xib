@@ -32,7 +32,7 @@
                         <constraint firstAttribute="width" constant="40" id="cEu-41-PYH"/>
                     </constraints>
                 </view>
-                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R4L-aE-WHV" userLabel="BasicColorSlider">
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R4L-aE-WHV" userLabel="BrightnessColorSlider">
                     <rect key="frame" x="8" y="28" width="44" height="6"/>
                     <subviews>
                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0K4-z9-l4l" userLabel="BasicColorSliderLeftBorder">
@@ -79,26 +79,26 @@
                     <rect key="frame" x="60" y="30" width="354" height="305"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
-                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uKY-kb-qO7" userLabel="ShadowColorSlider">
-                    <rect key="frame" x="60" y="30" width="7" height="7"/>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uKY-kb-qO7" userLabel="HueSaturationColorSlider">
+                    <rect key="frame" x="60" y="30" width="10" height="10"/>
                     <subviews>
                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pIR-Xm-OOy" userLabel="ShadowColorSliderLeftBorder">
-                            <rect key="frame" x="0.0" y="0.0" width="2" height="7"/>
+                            <rect key="frame" x="0.0" y="0.0" width="2" height="10"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="2" id="CgF-gY-aOV"/>
                             </constraints>
                         </view>
                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="shj-sX-W6K" userLabel="ShadowColorSliderRightBorder">
-                            <rect key="frame" x="5" y="0.0" width="2" height="7"/>
+                            <rect key="frame" x="8" y="0.0" width="2" height="10"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Hc-SX-eh3" userLabel="ShadowColorSliderTopBorder">
-                            <rect key="frame" x="-0.5" y="0.0" width="7" height="2"/>
+                            <rect key="frame" x="-0.5" y="0.0" width="10" height="2"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MP4-oh-VT1" userLabel="ShadowColorSliderBottomBorder">
-                            <rect key="frame" x="0.0" y="5" width="7" height="2"/>
+                            <rect key="frame" x="0.0" y="8" width="10" height="2"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                     </subviews>
@@ -111,7 +111,7 @@
                         <constraint firstItem="shj-sX-W6K" firstAttribute="centerY" secondItem="uKY-kb-qO7" secondAttribute="centerY" id="CyV-K4-1MA"/>
                         <constraint firstItem="MP4-oh-VT1" firstAttribute="width" secondItem="uKY-kb-qO7" secondAttribute="width" id="GcO-7Z-QBe"/>
                         <constraint firstItem="pIR-Xm-OOy" firstAttribute="height" secondItem="uKY-kb-qO7" secondAttribute="height" id="OvP-L9-1fq"/>
-                        <constraint firstAttribute="width" constant="7" id="TUM-gc-N79"/>
+                        <constraint firstAttribute="width" constant="10" id="TUM-gc-N79"/>
                         <constraint firstAttribute="width" secondItem="uKY-kb-qO7" secondAttribute="height" id="TxG-QH-5gE"/>
                         <constraint firstItem="pIR-Xm-OOy" firstAttribute="leading" secondItem="uKY-kb-qO7" secondAttribute="leading" id="aCS-6U-iBn"/>
                         <constraint firstItem="MP4-oh-VT1" firstAttribute="centerX" secondItem="uKY-kb-qO7" secondAttribute="centerX" id="aoh-VD-aW2"/>
@@ -122,6 +122,17 @@
                         <constraint firstItem="pIR-Xm-OOy" firstAttribute="centerY" secondItem="uKY-kb-qO7" secondAttribute="centerY" id="uYN-VY-WOE"/>
                         <constraint firstItem="8Hc-SX-eh3" firstAttribute="width" secondItem="uKY-kb-qO7" secondAttribute="width" id="vLt-dM-Aze"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                            <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m7G-Qy-atM" userLabel="ControlView">
                     <rect key="frame" x="10" y="345" width="403.5" height="40"/>
@@ -199,6 +210,7 @@
                 <outlet property="hueSaturationColorPicker" destination="rgk-ro-Nvl" id="QCH-ph-3El"/>
                 <outlet property="hueSaturationColorSliderHorizontalPosition" destination="lhg-JE-fRt" id="RTG-N8-3rU"/>
                 <outlet property="hueSaturationColorSliderVerticalPosition" destination="9dn-tb-Zs6" id="nwr-JJ-bPc"/>
+                <outlet property="shadowColorSliderView" destination="4rc-XE-ZKf" id="SsV-DX-NVX"/>
             </connections>
             <point key="canvasLocation" x="77" y="-186.5"/>
         </view>
@@ -213,7 +225,7 @@
                         <constraint firstAttribute="width" constant="40" id="Kkj-AS-mEh"/>
                     </constraints>
                 </view>
-                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ql8-uy-hwW" userLabel="BasicColorSlider">
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ql8-uy-hwW" userLabel="BrightnessColorSlider">
                     <rect key="frame" x="8" y="8" width="44" height="6"/>
                     <subviews>
                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x6B-sK-Tg8" userLabel="BasicColorSliderLeftBorder">
@@ -260,26 +272,26 @@
                     <rect key="frame" x="60" y="10" width="354" height="325"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
-                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4rc-XE-ZKf" userLabel="ShadowColorSlider">
-                    <rect key="frame" x="60" y="10" width="7" height="7"/>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4rc-XE-ZKf" userLabel="HueSaturationColorSlider">
+                    <rect key="frame" x="60" y="10" width="10" height="10"/>
                     <subviews>
                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SYr-0f-kBq" userLabel="ShadowColorSliderLeftBorder">
-                            <rect key="frame" x="0.0" y="0.0" width="2" height="7"/>
+                            <rect key="frame" x="0.0" y="0.0" width="2" height="10"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="2" id="ji1-s0-SMJ"/>
                             </constraints>
                         </view>
                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lfb-c0-XnZ" userLabel="ShadowColorSliderRightBorder">
-                            <rect key="frame" x="5" y="0.0" width="2" height="7"/>
+                            <rect key="frame" x="8" y="0.0" width="2" height="10"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KzT-if-HoM" userLabel="ShadowColorSliderTopBorder">
-                            <rect key="frame" x="-0.5" y="0.0" width="7" height="2"/>
+                            <rect key="frame" x="-0.5" y="0.0" width="10" height="2"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GdK-ST-bRf" userLabel="ShadowColorSliderBottomBorder">
-                            <rect key="frame" x="0.0" y="5" width="7" height="2"/>
+                            <rect key="frame" x="0.0" y="8" width="10" height="2"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                     </subviews>
@@ -295,7 +307,7 @@
                         <constraint firstItem="GdK-ST-bRf" firstAttribute="height" secondItem="KzT-if-HoM" secondAttribute="height" id="WlR-H3-NYS"/>
                         <constraint firstItem="lfb-c0-XnZ" firstAttribute="height" secondItem="4rc-XE-ZKf" secondAttribute="height" id="bC4-eb-hQn"/>
                         <constraint firstAttribute="top" secondItem="KzT-if-HoM" secondAttribute="top" id="eDE-pt-Vlg"/>
-                        <constraint firstAttribute="width" constant="7" id="ee0-UD-alq"/>
+                        <constraint firstAttribute="width" constant="10" id="ee0-UD-alq"/>
                         <constraint firstItem="lfb-c0-XnZ" firstAttribute="centerY" secondItem="4rc-XE-ZKf" secondAttribute="centerY" id="mzu-Aw-twW"/>
                         <constraint firstItem="KzT-if-HoM" firstAttribute="height" secondItem="SYr-0f-kBq" secondAttribute="width" id="nLd-Em-A01"/>
                         <constraint firstItem="GdK-ST-bRf" firstAttribute="centerX" secondItem="4rc-XE-ZKf" secondAttribute="centerX" id="qpe-6N-5Wm"/>
@@ -374,6 +386,7 @@
                 <outlet property="hueSaturationColorPicker" destination="Qes-X1-Ec5" id="jCo-na-oli"/>
                 <outlet property="hueSaturationColorSliderHorizontalPosition" destination="3H6-TD-3wf" id="Xwn-Wk-08d"/>
                 <outlet property="hueSaturationColorSliderVerticalPosition" destination="LFx-BP-96u" id="TAE-a9-7mt"/>
+                <outlet property="shadowColorSliderView" destination="4rc-XE-ZKf" id="yZf-g7-mO1"/>
             </connections>
             <point key="canvasLocation" x="77" y="-186.5"/>
         </view>

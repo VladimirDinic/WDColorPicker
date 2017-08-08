@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
 s.platform = :ios
 s.name             = "WDColorPicker"
-s.version          = "0.0.7"
+s.version          = "0.0.8"
 s.summary          = "WDColorPicker is a simple lightweight component for displaying color picker inside iOS apps."
 
 s.description      = <<-DESC
