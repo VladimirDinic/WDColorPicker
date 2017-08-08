@@ -15,6 +15,7 @@ import UIKit
 }
 
 open class WDColorPickerView: UIView, ColorPickerViewDelegate {
+    @IBOutlet weak var hueSaturationColorSlider: UIView!
 
     var pickerInitialColor : UIColor = .black
     
@@ -33,7 +34,6 @@ open class WDColorPickerView: UIView, ColorPickerViewDelegate {
         }
     }
     
-    @IBOutlet weak var shadowColorSliderView: UIView!
     @IBOutlet weak private var currentColorView: UIView!
     @IBOutlet weak private var brightnessColorPicker: BrightnessColorPickerView!
     @IBOutlet weak private var hueSaturationColorPicker: HueSaturationColorPickerView!
@@ -143,6 +143,10 @@ open class WDColorPickerView: UIView, ColorPickerViewDelegate {
             {
                 self.currentColorView.backgroundColor = UIColor(hue: hueSaturationColorPicker.hue, saturation: hueSaturationColorPicker.saturation, brightness: CGFloat(brightnessColorPicker.brightness), alpha: 1.0)
             }
+            if hueSaturationColorSlider != nil
+            {
+                self.hueSaturationColorSlider.backgroundColor = UIColor(hue: hueSaturationColorPicker.hue, saturation: hueSaturationColorPicker.saturation, brightness: 1.0, alpha: 1.0)
+            }
             self.perform(#selector(setInitialCursorPositions), with: nil, afterDelay: 0.001)
             NotificationCenter.default.addObserver(self, selector: #selector(reload), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
         }
@@ -180,6 +184,10 @@ open class WDColorPickerView: UIView, ColorPickerViewDelegate {
             colorDelegate.colorChanged?(colorPicker: self, color: currentColor)
         }
         self.setCursorPositions()
+        if hueSaturationColorSlider != nil
+        {
+            self.hueSaturationColorSlider.backgroundColor = UIColor(hue: hueSaturationColorPicker.hue, saturation: hueSaturationColorPicker.saturation, brightness: 1.0, alpha: 1.0)
+        }
     }
     
     func setCursorPositions()

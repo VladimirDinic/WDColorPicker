@@ -122,17 +122,6 @@
                         <constraint firstItem="pIR-Xm-OOy" firstAttribute="centerY" secondItem="uKY-kb-qO7" secondAttribute="centerY" id="uYN-VY-WOE"/>
                         <constraint firstItem="8Hc-SX-eh3" firstAttribute="width" secondItem="uKY-kb-qO7" secondAttribute="width" id="vLt-dM-Aze"/>
                     </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="10"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                            <integer key="value" value="2"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
-                            <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m7G-Qy-atM" userLabel="ControlView">
                     <rect key="frame" x="10" y="345" width="403.5" height="40"/>
@@ -208,9 +197,9 @@
                 <outlet property="brightnessColorSliderVerticalPosition" destination="jBx-H3-fO9" id="enO-OL-Ny5"/>
                 <outlet property="currentColorView" destination="Rkl-le-wJi" id="enc-XN-wJW"/>
                 <outlet property="hueSaturationColorPicker" destination="rgk-ro-Nvl" id="QCH-ph-3El"/>
+                <outlet property="hueSaturationColorSlider" destination="uKY-kb-qO7" id="r8N-mG-dXT"/>
                 <outlet property="hueSaturationColorSliderHorizontalPosition" destination="lhg-JE-fRt" id="RTG-N8-3rU"/>
                 <outlet property="hueSaturationColorSliderVerticalPosition" destination="9dn-tb-Zs6" id="nwr-JJ-bPc"/>
-                <outlet property="shadowColorSliderView" destination="4rc-XE-ZKf" id="SsV-DX-NVX"/>
             </connections>
             <point key="canvasLocation" x="77" y="-186.5"/>
         </view>
@@ -384,9 +373,9 @@
                 <outlet property="brightnessColorSliderVerticalPosition" destination="Q8q-b2-0vO" id="hQm-yI-kwJ"/>
                 <outlet property="currentColorView" destination="2VK-zT-tEf" id="byK-HU-n4u"/>
                 <outlet property="hueSaturationColorPicker" destination="Qes-X1-Ec5" id="jCo-na-oli"/>
+                <outlet property="hueSaturationColorSlider" destination="4rc-XE-ZKf" id="4H3-tM-uJy"/>
                 <outlet property="hueSaturationColorSliderHorizontalPosition" destination="3H6-TD-3wf" id="Xwn-Wk-08d"/>
                 <outlet property="hueSaturationColorSliderVerticalPosition" destination="LFx-BP-96u" id="TAE-a9-7mt"/>
-                <outlet property="shadowColorSliderView" destination="4rc-XE-ZKf" id="yZf-g7-mO1"/>
             </connections>
             <point key="canvasLocation" x="77" y="-186.5"/>
         </view>
