@@ -63,6 +63,9 @@
             <PersistentString
                value = "currentColor.hsba">
             </PersistentString>
+            <PersistentString
+               value = "pickedColor.hsba">
+            </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState

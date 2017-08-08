@@ -10,11 +10,7 @@ import UIKit
 
 class BasicColorPickerView: ColorPickerView {
     
-    var basicColor : UIColor = .red {
-        didSet {
-            pickPosition = CGPoint(x: 0.0, y: (1.0 - basicColor.hsba.b) * self.frame.height)
-        }
-    }
+    var basicColor : UIColor = .red
     
     override func drawColors()
     {
@@ -34,7 +30,7 @@ class BasicColorPickerView: ColorPickerView {
     override func pickColor(gesture: UIGestureRecognizer)
     {
         pickPosition = gesture.location(in: self)
-        let pickedColor = self.getColor(relativeHeight: pickPosition.y)
+        let pickedColor = self.getColor(relativeHeight: (pickPosition?.y)!)
         if let delegate = self.colorDelegate
         {
             delegate.colorSelected(colorPicker: self, selectedColor: pickedColor)

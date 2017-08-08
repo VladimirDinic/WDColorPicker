@@ -91,10 +91,6 @@ open class WDColorPickerView: UIView, ColorPickerViewDelegate {
     
     class func animateShowPicker(colorPicker:WDColorPickerView)
     {
-        UIView.animate(withDuration: 0.3, animations: {
-            colorPicker.alpha = 1.0
-            overlay?.alpha = 1.0
-        }, completion: nil)
         UIView.animate(withDuration: 0.3, animations: { 
             colorPicker.alpha = 1.0
             overlay?.alpha = 1.0
@@ -173,9 +169,24 @@ open class WDColorPickerView: UIView, ColorPickerViewDelegate {
     
     func setCursorPositions()
     {
-        self.basicColorSliderVerticalPosition.constant = min(max(0, basicColorPicker.pickPosition.y - 1.0), basicColorPicker.frame.height-2.0)
-        self.shadowColorSliderHorizontalPosition.constant = min(max(-2.0, shadowColorPicker.pickPosition.x - 2.0), shadowColorPicker.frame.width-4.0)
-        self.shadowColorSliderVerticalPosition.constant = min(max(-2.0, shadowColorPicker.pickPosition.y - 2.0), shadowColorPicker.frame.height-4.0)
+        if basicColorPicker.pickPosition != nil
+        {
+            self.basicColorSliderVerticalPosition.constant = min(max(0, (basicColorPicker.pickPosition?.y)! - 1.0), basicColorPicker.frame.height-2.0)
+        }
+        else
+        {
+            self.basicColorSliderVerticalPosition.constant = min(max(0, (1.0 - currentColor.hsba.b) * basicColorPicker.frame.height - 1.0), basicColorPicker.frame.height-2.0)
+        }
+        if shadowColorPicker.pickPosition != nil
+        {
+            self.shadowColorSliderHorizontalPosition.constant = min(max(-2.0, (shadowColorPicker.pickPosition?.x)! - 2.0), shadowColorPicker.frame.width-4.0)
+            self.shadowColorSliderVerticalPosition.constant = min(max(-2.0, (shadowColorPicker.pickPosition?.y)! - 2.0), shadowColorPicker.frame.height-4.0)
+        }
+        else
+        {
+            self.shadowColorSliderHorizontalPosition.constant = min(max(-2.0, currentColor.hsba.h * shadowColorPicker.frame.width - 2.0), shadowColorPicker.frame.width-4.0)
+            self.shadowColorSliderVerticalPosition.constant = min(max(-2.0, (1.0 - currentColor.hsba.s) * shadowColorPicker.frame.height - 2.0), shadowColorPicker.frame.height-4.0)
+        }
         self.layoutIfNeeded()
     }
     

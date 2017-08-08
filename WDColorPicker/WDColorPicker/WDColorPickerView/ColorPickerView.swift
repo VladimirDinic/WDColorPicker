@@ -16,7 +16,7 @@ protocol ColorPickerViewDelegate
 class ColorPickerView: UIView {
 
     var colorDelegate : ColorPickerViewDelegate?
-    var pickPosition:CGPoint = .zero
+    var pickPosition:CGPoint?
     
     var colorPickTapGesture:UITapGestureRecognizer?
     var colorPickPanGesture:UIPanGestureRecognizer?

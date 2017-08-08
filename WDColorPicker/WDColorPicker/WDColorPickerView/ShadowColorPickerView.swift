@@ -10,11 +10,7 @@ import UIKit
 
 class ShadowColorPickerView: ColorPickerView {
 
-    var currentColor:UIColor = .red {
-        didSet {
-            pickPosition = CGPoint(x: currentColor.hsba.h * self.frame.width - 2.0, y: (1.0 - currentColor.hsba.s) * self.frame.height - 2.0)
-        }
-    }
+    var currentColor:UIColor = .red
     
     override func drawColors()
     {
@@ -42,7 +38,7 @@ class ShadowColorPickerView: ColorPickerView {
     override func pickColor(gesture: UIGestureRecognizer)
     {
         pickPosition = gesture.location(in: self)
-        let pickedColor = self.getColor(relativeWidth: min(self.frame.width,max(0,pickPosition.x)), relativeHeight: min(self.frame.height,max(0,pickPosition.y)))
+        let pickedColor = self.getColor(relativeWidth: min(self.frame.width,max(0.0,(pickPosition?.x)!)), relativeHeight: min(self.frame.height,max(0.0,(pickPosition?.y)!)))
         currentColor = UIColor(hue: pickedColor.hsba.h, saturation: pickedColor.hsba.s, brightness: currentColor.hsba.b, alpha: 1.0)
         if let delegate = self.colorDelegate
         {
