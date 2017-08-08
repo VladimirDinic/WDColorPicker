@@ -193,12 +193,12 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="basicColorPicker" destination="8EI-d4-Dde" id="vrT-vd-v32"/>
-                <outlet property="basicColorSliderVerticalPosition" destination="jBx-H3-fO9" id="enO-OL-Ny5"/>
+                <outlet property="brightnessColorPicker" destination="8EI-d4-Dde" id="vrT-vd-v32"/>
+                <outlet property="brightnessColorSliderVerticalPosition" destination="jBx-H3-fO9" id="enO-OL-Ny5"/>
                 <outlet property="currentColorView" destination="Rkl-le-wJi" id="enc-XN-wJW"/>
-                <outlet property="shadowColorPicker" destination="rgk-ro-Nvl" id="QCH-ph-3El"/>
-                <outlet property="shadowColorSliderHorizontalPosition" destination="lhg-JE-fRt" id="RTG-N8-3rU"/>
-                <outlet property="shadowColorSliderVerticalPosition" destination="9dn-tb-Zs6" id="nwr-JJ-bPc"/>
+                <outlet property="hueSaturationColorPicker" destination="rgk-ro-Nvl" id="QCH-ph-3El"/>
+                <outlet property="hueSaturationColorSliderHorizontalPosition" destination="lhg-JE-fRt" id="RTG-N8-3rU"/>
+                <outlet property="hueSaturationColorSliderVerticalPosition" destination="9dn-tb-Zs6" id="nwr-JJ-bPc"/>
             </connections>
             <point key="canvasLocation" x="77" y="-186.5"/>
         </view>
@@ -368,12 +368,12 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="basicColorPicker" destination="zDS-9B-WaV" id="uK8-Rx-lPX"/>
-                <outlet property="basicColorSliderVerticalPosition" destination="Q8q-b2-0vO" id="hQm-yI-kwJ"/>
+                <outlet property="brightnessColorPicker" destination="zDS-9B-WaV" id="uK8-Rx-lPX"/>
+                <outlet property="brightnessColorSliderVerticalPosition" destination="Q8q-b2-0vO" id="hQm-yI-kwJ"/>
                 <outlet property="currentColorView" destination="2VK-zT-tEf" id="byK-HU-n4u"/>
-                <outlet property="shadowColorPicker" destination="Qes-X1-Ec5" id="jCo-na-oli"/>
-                <outlet property="shadowColorSliderHorizontalPosition" destination="3H6-TD-3wf" id="Xwn-Wk-08d"/>
-                <outlet property="shadowColorSliderVerticalPosition" destination="LFx-BP-96u" id="TAE-a9-7mt"/>
+                <outlet property="hueSaturationColorPicker" destination="Qes-X1-Ec5" id="jCo-na-oli"/>
+                <outlet property="hueSaturationColorSliderHorizontalPosition" destination="3H6-TD-3wf" id="Xwn-Wk-08d"/>
+                <outlet property="hueSaturationColorSliderVerticalPosition" destination="LFx-BP-96u" id="TAE-a9-7mt"/>
             </connections>
             <point key="canvasLocation" x="77" y="-186.5"/>
         </view>
