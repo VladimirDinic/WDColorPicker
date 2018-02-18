@@ -14,13 +14,13 @@ protocol ColorPickerViewDelegate
 }
 
 class ColorPickerView: UIView {
-
+    
     var colorDelegate : ColorPickerViewDelegate?
     var pickPosition:CGPoint?
     
     var colorPickTapGesture:UITapGestureRecognizer?
     var colorPickPanGesture:UIPanGestureRecognizer?
-
+    
     var hue:CGFloat = 0.0
     var saturation:CGFloat = 0.0
     var brightness:CGFloat = 0.0
@@ -48,9 +48,9 @@ class ColorPickerView: UIView {
     {
         
     }
- 
     
-    func pickColor(gesture:UIGestureRecognizer)
+    
+    @objc func pickColor(gesture:UIGestureRecognizer)
     {
         
     }
@@ -77,3 +77,4 @@ extension UIColor {
         return (h: min(max(h,0),1), s: min(max(s,0),1), b: min(max(b,0),1), a: a)
     }
 }
+

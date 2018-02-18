@@ -14,7 +14,7 @@ Download example project and add WDColorPickerView folder inside your project
 ```Ruby
 target '<TargetName>' do
     use_frameworks!
-    pod 'WDColorPicker', ' ~> 1.0'
+    pod 'WDColorPicker', ' ~> 1.0.1'
 end
 ```
 
