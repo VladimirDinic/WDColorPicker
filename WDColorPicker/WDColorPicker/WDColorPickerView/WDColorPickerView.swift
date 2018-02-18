@@ -160,7 +160,7 @@ open class WDColorPickerView: UIView, ColorPickerViewDelegate {
         }
      }
     
-    func reload()
+    @objc func reload()
     {
         brightnessColorPicker.pickPosition = nil
         hueSaturationColorPicker.pickPosition = nil
@@ -213,7 +213,7 @@ open class WDColorPickerView: UIView, ColorPickerViewDelegate {
         self.layoutIfNeeded()
     }
     
-    func setInitialCursorPositions()
+    @objc func setInitialCursorPositions()
     {
         self.brightnessColorSliderVerticalPosition.constant = min(max(0, (1.0 - currentColor.hsba.b) * brightnessColorPicker.frame.height - 1.0), brightnessColorPicker.frame.height-2.0)
         self.hueSaturationColorSliderHorizontalPosition.constant = min(max(-4.0, currentColor.hsba.h * hueSaturationColorPicker.frame.width - 4.0), hueSaturationColorPicker.frame.width-6.0)
